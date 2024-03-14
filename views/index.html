@@ -7,7 +7,14 @@
       <Text.H1 class="font-bold">Spotify popular songs</Text.H1>
       <Text.H3 class="text-neutral-400 mt-2">A quick analysis of the most popular songs on Spotify</Text.H3>
       <Text.H4 class="mt-8">Select a year to see the most popular songs</Text.H4> 
-      <Input param="year" type="number" value="2023" class="mt-2"/>
+      <Input param="year" type="number" value="2023" class="mt-2 mb-16"/>
+      <Table
+        class="w-full"
+        query="index/top-artists" 
+        opts={{
+          reactiveToParams: true
+        }}
+      />
       <!-- <RunButton
       queries={[
         "init",
@@ -35,18 +42,12 @@
           query="index/top-artists" 
           x="artist"
           y="total"
+          yLabel="Total streams"
           opts={{
             reactiveToParams: true
           }}
         />
       </Row>
-      <!-- <Table
-        class="w-full"
-        query="index/init" 
-        opts={{
-          reactiveToParams: true
-        }}
-      /> -->
     </Column>
   </Row>
 </View>
